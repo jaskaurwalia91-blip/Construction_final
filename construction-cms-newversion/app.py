@@ -21,7 +21,7 @@ app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max file size
 app.config['ALLOWED_EXTENSIONS'] = {'pdf', 'png', 'jpg', 'jpeg', 'doc', 'docx', 'xls', 'xlsx'}
 
 # Database Configuration (NeonDB)
-DATABASE_URL = os.environ.get('DATABASE_URL', 'postgresql://neondb_owner:npg_5h0nTNEfpOLH@ep-soft-credit-aimmm2c4.us-east-1.aws.neon.tech/neondb?sslmode=require')
+DATABASE_URL = os.environ.get('DATABASE_URL', 'postgresql://neondb_owner:npg_C2pgKZH4sSJk@ep-autumn-river-aik6owco-pooler.c-4.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require')
 
 def get_db():
     """Get database connection"""
@@ -755,4 +755,5 @@ def download_file(filename):
 if __name__ == '__main__':
     os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
     init_db()
+
     app.run(debug=True, host='0.0.0.0', port=5000)
